@@ -30,7 +30,7 @@ export default function TicketWhizLoader() {
           transparent 1px,
           transparent 46px
         ),
-        radial-gradient(circle at 50% 10%, #ffffff1a, #00006540)
+        radial-gradient(circle at 50% 10%, #ffffff1a, #00006510)
       `,
     //   maskImage: "linear-gradient(to bottom, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%)",
       WebkitMaskImage:
@@ -107,7 +107,7 @@ export default function TicketWhizLoader() {
         <FeatureGlass icon={<ShieldCheck className="w-7 h-7 text-[#000065]/90" />} title="100% guarantee" subtitle="buyer protection" />
       </div>
 
-      <p className="mt-10 text-sm relative text-black/70 leading-relaxed text-center max-w-2xl">
+      <p className="mt-10 text-sm relative text-black/60 leading-relaxed text-center max-w-2xl">
         TicketWhiz is a metasearch engine. Purchases are made through third-party marketplaces. Prices and
         availability may change. We may earn a commission if you click through and buy.
       </p>
