@@ -8,7 +8,7 @@ import GradientLoader from "./GradientLoader";
 
 export default function TicketWhizLoader() {
   return (
-    <div className="min-h-screen relative flex flex-col items-center justify-center bg-gradient-to-b from-white via-blue-50 to-blue-100 p-6">
+    <div className="min-h-screen relative flex flex-col items-center justify-center  p-6">
       {/* Header */}
    <div className="absolute inset-0 z-0">
   {/* Grid + gradient background */}
@@ -135,7 +135,7 @@ function LogoPill({ label, accent = false, important = false }: { label: string;
 
 function FeatureGlass({ icon, title, subtitle }: { icon: React.ReactNode; title: string; subtitle: string }) {
   return (
-    <div className="h-fit flex flex-shrink-0 flex-col items-center justify-center py-4 px-3 rounded-2xl bg-white/30 backdrop-blur-md border border-white/40">
+    <div className="h-fit flex flex-shrink-0 flex-col items-center justify-center py-4 px-3 shadow-inner rounded-2xl bg-blue-100/05 backdrop-blur-md border border-white/40">
       {icon}
       <div className="mt-2 text-xs text-black/60">{title}</div>
       <div className="mt-0.5 text-xs text-black/60">{subtitle}</div>
