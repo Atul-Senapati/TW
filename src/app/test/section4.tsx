@@ -18,23 +18,25 @@ export default function TicketWhizLoader() {
       background: `
         repeating-linear-gradient(
           0deg,
-          rgba(255,255,255,0.05) 0px,
-          rgba(255,255,255,0.05) 1px,
+         rgba(0,0,0,0.03) 0px,
+rgba(0,0,0,0.03) 1px,
+
           transparent 1px,
           transparent 46px
         ),
         repeating-linear-gradient(
           90deg,
-          rgba(255,255,255,0.05) 0px,
-          rgba(255,255,255,0.05) 1px,
+          rgba(0,0,0,0.03) 0px,
+rgba(0,0,0,0.03) 1px,
+
           transparent 1px,
           transparent 46px
         ),
         radial-gradient(circle at 50% 10%, #ffffff1a, #00006510)
       `,
-    //   maskImage: "linear-gradient(to bottom, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%)",
+      maskImage: "linear-gradient(to bottom, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%)",
       WebkitMaskImage:
-        "linear-gradient(to bottom, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%)",
+        "linear-gradient(to top, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%) ",
       maskRepeat: "no-repeat",
       WebkitMaskRepeat: "no-repeat",
       maskSize: "100% 100%",
@@ -135,7 +137,7 @@ function LogoPill({ label, accent = false, important = false }: { label: string;
 
 function FeatureGlass({ icon, title, subtitle }: { icon: React.ReactNode; title: string; subtitle: string }) {
   return (
-    <div className="h-fit flex flex-shrink-0 flex-col items-center justify-center py-4 px-3 shadow-inner rounded-2xl bg-blue-100/05 backdrop-blur-md border border-white/40">
+    <div className="h-fit flex flex-shrink-0 flex-col items-center justify-center py-4 px-3 shadow-inner rounded-2xl bg-white/40 backdrop-blur-md border border-black/10">
       {icon}
       <div className="mt-2 text-xs text-black/60">{title}</div>
       <div className="mt-0.5 text-xs text-black/60">{subtitle}</div>
