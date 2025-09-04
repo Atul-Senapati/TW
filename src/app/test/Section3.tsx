@@ -16,48 +16,48 @@ type Props = {
 };
 
 const defaultBrands: Brand[] = [
-  { 
-    id: "s1", 
-    name: "Stripe", 
-    color: "", 
-    logo: "slider2.png" 
+  {
+    id: "s1",
+    name: "Stripe",
+    color: "",
+    logo: "slider2.png",
   },
-  { 
-    id: "s2", 
-    name: "Apple", 
-    color: "#111827", 
-    logo: "slider3.png" 
+  {
+    id: "s2",
+    name: "Apple",
+    color: "#111827",
+    logo: "slider3.png",
   },
-  { 
-    id: "s3", 
-    name: "Google", 
-    color: "#1a73e8", 
-    logo: "slider4.png" 
+  {
+    id: "s3",
+    name: "Google",
+    color: "#1a73e8",
+    logo: "slider4.png",
   },
-  { 
-    id: "s4", 
-    name: "Nike", 
-    color: "#111827", 
-    logo: "slider.png" ,
+  {
+    id: "s4",
+    name: "Nike",
+    color: "#111827",
+    logo: "slider.png",
   },
-  { 
-    id: "s5", 
-    name: "Airbnb", 
-    color: "#FF5A5F", 
-    logo: "slider1.png" ,
+  {
+    id: "s5",
+    name: "Airbnb",
+    color: "#FF5A5F",
+    logo: "slider1.png",
   },
-  { 
-    id: "s6", 
-    name: "Spotify", 
-    color: "#1DB954", 
-    logo: "slider5.png" ,},
-  { 
-    id: "s7", 
-    name: "Dropbox", 
-    color: "#0061FF", 
-    logo: "slider6.png" ,
+  {
+    id: "s6",
+    name: "Spotify",
+    color: "#1DB954",
+    logo: "slider5.png",
   },
- 
+  {
+    id: "s7",
+    name: "Dropbox",
+    color: "#0061FF",
+    logo: "slider6.png",
+  },
 ];
 
 export default function BrandCarouselScanner({
@@ -74,7 +74,11 @@ export default function BrandCarouselScanner({
       const next = (activeIndex + 1) % brands.length;
       setActiveIndex(next);
       const el = itemRefs.current[next];
-      el?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      el?.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
     }, interval);
     return () => clearInterval(id);
   }, [activeIndex, brands.length, interval]);
@@ -105,12 +109,10 @@ export default function BrandCarouselScanner({
               .join("")
               .toUpperCase();
 
-              
-
             return (
               <div
                 key={`${b.id}-${idx}`}
-                ref={(el:any) => (itemRefs.current[realIndex] = el)}
+                ref={(el: any) => (itemRefs.current[realIndex] = el)}
                 className="snap-center flex-none max-w-36   px-1"
               >
                 <motion.div
@@ -118,33 +120,39 @@ export default function BrandCarouselScanner({
                   animate={{
                     scale: isActive ? 1.1 : 0.8,
                     opacity: isActive ? 1 : 0.25,
-                    filter: isActive ? "blur(0px) grayscale(0%)" : "blur(1px) grayscale(60%)",
+                    filter: isActive
+                      ? "blur(0px) grayscale(0%)"
+                      : "blur(1px) grayscale(60%)",
                   }}
                   transition={{ type: "spring", stiffness: 250, damping: 28 }}
                   style={{
-   ...(isActive && {
-       
-    
-      background: "rgba(255, 255, 255, 0.08)",       // semi-transparent base
-      backdropFilter: "blur(10px)",                 // glass blur
-      WebkitBackdropFilter: "blur(10px)",          // Safari support
-      boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.1)", // soft shadow
-      backgroundImage:
-        "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.06) 42%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0.06) 58%, rgba(255,255,255,0) 100%)",
-    }),
+                    ...(isActive && {
+                      background: "linear-gradient(145deg, #e8e8ec, #ffffff)",
+                      boxShadow:
+                        "18px 18px 36px #d7d7da, -18px -18px 36px #ffffff",
 
-}}
-
-                  className="relative   overflow-hidden  flex items-center justify-center h-20 px-4"
-                //   style={{ background: "white" }}
+                      // glass blur
+                      WebkitBackdropFilter: "blur(10px)", // Safari support
+                    }),
+                  }}
+                  className="relative bg-[#F4F4F8] rounded-lg overflow-hidden  flex items-center justify-center h-20 px-4"
+                  //   style={{ background: "white" }}
                   //|| b.color
                 >
                   {b.logo ? (
-                    <img src={b.logo} alt={b.name} className="max-h-24 object-contain" />
+                    <img
+                      src={b.logo}
+                      alt={b.name}
+                      className={`${
+                        b.id == "s7" ? "max-h-24 p-4" : "max-h-24"
+                      } object-contain`}
+                    />
                   ) : (
-                    <span className="text-white text-2xl font-bold">{initials}</span>
+                    <span className="text-white text-2xl font-bold">
+                      {initials}
+                    </span>
                   )}
-<motion.span
+                  {/* <motion.span
       animate={{
         opacity: isActive ? 1 : 0,
         scale: isActive ? 1.1 : 1,
@@ -187,16 +195,18 @@ export default function BrandCarouselScanner({
       }}
       transition={{ duration: 0.4 }}
       className="absolute bottom-0 right-0 w-4 h-4 border-b-3 border-r-3 border-[#000065] rounded-br-sm"
-    />
-
-                  
+    /> */}
 
                   {isActive && (
                     <motion.div
                       aria-hidden
                       initial={{ x: "-160%" }}
                       animate={{ x: ["-160%", "160%"] }}
-                      transition={{ ease: "linear", duration: 1.6, repeat: Infinity }}
+                      transition={{
+                        ease: "linear",
+                        duration: 1.6,
+                        repeat: Infinity,
+                      }}
                       className="absolute inset-0"
                       style={{
                         background:

@@ -2,7 +2,16 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, Clock, MapPin, ShieldCheck, CheckCircle2, Landmark, DollarSign, CircleDollarSign } from "lucide-react";
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  ShieldCheck,
+  CheckCircle2,
+  Landmark,
+  DollarSign,
+  CircleDollarSign,
+} from "lucide-react";
 import BrandCarouselScanner from "./Section3";
 import GradientLoader from "./GradientLoader";
 
@@ -10,12 +19,12 @@ export default function TicketWhizLoader() {
   return (
     <div className="min-h-screen relative flex flex-col items-center justify-center  p-6">
       {/* Header */}
-   <div className="absolute inset-0 z-0">
-  {/* Grid + gradient background */}
-  <div
-    className="absolute inset-0"
-    style={{
-      background: `
+      <div className="absolute inset-0 z-0">
+        {/* Grid + gradient background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
         repeating-linear-gradient(
           0deg,
          rgba(0,0,0,0.03) 0px,
@@ -34,36 +43,52 @@ rgba(0,0,0,0.03) 1px,
         ),
         radial-gradient(circle at 50% 10%, #ffffff1a, #00006510)
       `,
-      maskImage: "linear-gradient(to bottom, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%)",
-      WebkitMaskImage:
-        "linear-gradient(to top, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%) ",
-      maskRepeat: "no-repeat",
-      WebkitMaskRepeat: "no-repeat",
-      maskSize: "100% 100%",
-      WebkitMaskSize: "100% 100%",
-    }}
-  />
-</div>
+            maskImage:
+              "linear-gradient(to bottom, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to top, rgba(255,255,255,1) 60%, rgba(255,255,255,0) 100%) ",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
+            maskSize: "100% 100%",
+            WebkitMaskSize: "100% 100%",
+          }}
+        />
+      </div>
 
       <header className="text-center mb-8 relative max-w-2xl">
         <div className="inline-flex items-center gap-3 justify-center">
-          <img src={"Asset2.png"} className="max-w-40"/>
+          <img src={"Asset2.png"} className="max-w-40" />
         </div>
 
-        <h2 className="mt-6 text-2xl sm:text-3xl font-semibold text-black">Finding Your Tickets</h2>
-        <p className="mt-2 text-sm text-black/70">New York Jets vs. Pittsburgh Steelers</p>
+        <h2 className="mt-6 text-2xl sm:text-3xl font-semibold text-black ">
+          Finding Your Tickets...
+        </h2>
+        <p className="mt-4 text-lg tracking-wide text-black/70">
+          New York Jets vs. Pittsburgh Steelers
+        </p>
 
-        <div className="mt-4 flex flex-col sm:flex-row gap-3 sm:gap-6 items-center justify-center text-sm text-black/70">
+        <div className="mt-2 flex flex-col sm:flex-row gap-3  items-center justify-center text-sm text-black/70">
+          {/* Date */}
           <div className="flex items-center gap-2">
-            <Calendar className="w-4 h-4" />
+            <Calendar className="w-4 h-4 text-gray-600" />
             <span>Sun, Sep 7, 2025</span>
           </div>
+
+          {/* Divider */}
+          <div className="hidden sm:block mx-4 text-gray-600">|</div>
+
+          {/* Time */}
           <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4" />
+            <Clock className="w-4 h-4 text-gray-600" />
             <span>01:00 PM</span>
           </div>
+
+          {/* Divider */}
+          <div className="hidden sm:block mx-4 text-gray-600">|</div>
+
+          {/* Location */}
           <div className="flex items-center gap-2">
-            <MapPin className="w-4 h-4" />
+            <MapPin className="w-4 h-4 text-gray-600" />
             <span>MetLife Stadium</span>
           </div>
         </div>
@@ -81,11 +106,11 @@ rgba(0,0,0,0.03) 1px,
         </div>
       </div> */}
 
-      <BrandCarouselScanner/>
+      <BrandCarouselScanner />
 
       {/* Progress */}
-       <div className="w-full max-w-2xl  relative">
-      {/* <div className="relative h-3 rounded-full bg-gray-300 overflow-hidden">
+      <div className="w-full max-w-2xl  relative">
+        {/* <div className="relative h-3 rounded-full bg-gray-300 overflow-hidden">
         <motion.div
           animate={{ x: ["-100%", "100%"] }}
           transition={{ duration: 1.5, ease: "linear", repeat: Infinity }}
@@ -95,49 +120,128 @@ rgba(0,0,0,0.03) 1px,
           }}
         />
       </div> */}
+        <div className="h-1.5 rounded-full bg-black/30 overflow-hidden relative">
+          <motion.div
+            initial={{ width: "23%" }}
+            animate={{ width: ["6%", "70%", "92%", "100%"] }}
+            transition={{
+              duration: 4,
+              ease: "linear",
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+            style={{
+              height: "100%",
+              borderRadius: 9999,
+              background:
+                "linear-gradient(90deg, rgba(0,0,101,0.4) 0%, rgba(0,0,101,0.8) 50%, rgba(0,0,101,1) 100%)",
+              backgroundSize: "200% 100%",
+            }}
+            className="absolute left-0 top-0"
+          />
+        </div>
 
-      <GradientLoader/>
-      <p className="mt-3 text-center text-sm text-gray-600">
-        Syncing inventory across sources...
-      </p>
-    </div>
+        {/* <GradientLoader /> */}
+        <p className="mt-3 text-center text-sm text-gray-600">
+          Syncing inventory across sources...
+        </p>
+      </div>
 
       {/* Features full-width glass sections */}
       <div className="w-full grid  grid-cols-1 sm:grid-cols-3 gap-6 mt-10 max-w-2xl  opacity-80 px-8">
-        <FeatureGlass icon={<CircleDollarSign className="w-7 h-7 text-[#000065]/90" />} title="Final price shown" subtitle="including fees" />
-        <FeatureGlass icon={<CheckCircle2 className="w-7 h-7 text-[#000065]/90" />} title="Verified tickets" subtitle="from trusted sellers" />
-        <FeatureGlass icon={<ShieldCheck className="w-7 h-7 text-[#000065]/90" />} title="100% guarantee" subtitle="buyer protection" />
+        <FeatureGlass
+          icon={<CircleDollarSign className="w-7 h-7 text-[#000065]/90" />}
+          title="Final price shown"
+          subtitle="including fees"
+        />
+        <FeatureGlass
+          icon={<CheckCircle2 className="w-7 h-7 text-[#000065]/90" />}
+          title="Verified tickets"
+          subtitle="from trusted sellers"
+        />
+        <FeatureGlass
+          icon={<ShieldCheck className="w-7 h-7 text-[#000065]/90" />}
+          title="100% guarantee"
+          subtitle="buyer protection"
+        />
       </div>
 
       <p className="mt-10 text-sm relative text-black/60 leading-relaxed text-center max-w-2xl">
-        TicketWhiz is a metasearch engine. Purchases are made through third-party marketplaces. Prices and
-        availability may change. We may earn a commission if you click through and buy.
+        TicketWhiz is a metasearch engine. Purchases are made through
+        third-party marketplaces. Prices and availability may change. We may
+        earn a commission if you click through and buy.
       </p>
     </div>
   );
 }
 
-function LogoPill({ label, accent = false, important = false }: { label: string; accent?: boolean; important?: boolean }) {
+function LogoPill({
+  label,
+  accent = false,
+  important = false,
+}: {
+  label: string;
+  accent?: boolean;
+  important?: boolean;
+}) {
   return (
     <div
       className={`flex items-center gap-3 px-3 py-2 rounded-lg shadow-sm ${
-        important ? "bg-white/90 scale-105 shadow-md" : accent ? "bg-white/80" : "bg-white/70"
+        important
+          ? "bg-white/90 scale-105 shadow-md"
+          : accent
+          ? "bg-white/80"
+          : "bg-white/70"
       }`}
       style={{ minWidth: 88 }}
       aria-hidden
     >
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="3" width="18" height="18" rx="5" stroke="#0ea5e9" strokeWidth="1.6" fill="white" />
-        <path d="M7 12h10" stroke="#0ea5e9" strokeWidth="1.6" strokeLinecap="round" />
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+          stroke="#0ea5e9"
+          strokeWidth="1.6"
+          fill="white"
+        />
+        <path
+          d="M7 12h10"
+          stroke="#0ea5e9"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+        />
       </svg>
       <div className="text-sm font-medium text-black/85 truncate">{label}</div>
     </div>
   );
 }
 
-function FeatureGlass({ icon, title, subtitle }: { icon: React.ReactNode; title: string; subtitle: string }) {
+function FeatureGlass({
+  icon,
+  title,
+  subtitle,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  subtitle: string;
+}) {
   return (
-    <div className="h-fit flex flex-shrink-0 flex-col items-center justify-center py-4 px-3 shadow-inner rounded-2xl bg-white/40 backdrop-blur-md border border-black/10">
+    <div
+      className="h-fit flex flex-shrink-0 flex-col items-center justify-center py-4 px-3 rounded-[12px] bg-[#F4F4F8] "
+      style={{
+        // background: "linear-gradient(145deg, #e8e8ec, #ffffff)",
+        boxShadow: "12px 12px 25px #d9d9dd,-12px -12px 25px #ffffff",
+      }}
+    >
       {icon}
       <div className="mt-2 text-xs text-black/60">{title}</div>
       <div className="mt-0.5 text-xs text-black/60">{subtitle}</div>

@@ -6,9 +6,9 @@ export default function GradientLoader() {
   return (
     <div className=" relative flex flex-col items-center justify-center ">
       {/* Loader */}
-      <div className="relative w-full max-w-2xl h-3 rounded-full overflow-hidden bg-black/20">
+      <div className="relative w-full max-w-2xl h-1.5 rounded-full overflow-hidden bg-black/20">
         <div className="absolute inset-0 animate-slide">
-          <div className="w-50 md:w-2xl h-3 rounded-full bg-gradient-to-l from-[#000065] via-[#000065]/50 to-transparent" />
+          <div className="w-50 md:w-2xl h-1.5 rounded-full bg-gradient-to-l from-[#000065] via-[#000065]/50 to-transparent" />
         </div>
       </div>
 
