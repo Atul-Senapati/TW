@@ -38,24 +38,24 @@ const defaultBrands: Brand[] = [
     id: "s4", 
     name: "Nike", 
     color: "#111827", 
-    logo: "slider2.png" ,
+    logo: "slider.png" ,
   },
   { 
     id: "s5", 
     name: "Airbnb", 
     color: "#FF5A5F", 
-    logo: "slider4.png" ,
+    logo: "slider1.png" ,
   },
   { 
     id: "s6", 
     name: "Spotify", 
     color: "#1DB954", 
-    logo: "slider2.png" ,},
+    logo: "slider5.png" ,},
   { 
     id: "s7", 
     name: "Dropbox", 
     color: "#0061FF", 
-    logo: "slider2.png" ,
+    logo: "slider6.png" ,
   },
  
 ];
@@ -105,10 +105,12 @@ export default function BrandCarouselScanner({
               .join("")
               .toUpperCase();
 
+              
+
             return (
               <div
                 key={`${b.id}-${idx}`}
-                ref={(el) => (itemRefs.current[realIndex] = el)}
+                ref={(el:any) => (itemRefs.current[realIndex] = el)}
                 className="snap-center flex-none max-w-36   px-1"
               >
                 <motion.div
