@@ -101,10 +101,10 @@ export default function TicketWhizLoader() {
     </div>
 
       {/* Features full-width glass sections */}
-      <div className="w-full grid  grid-cols-3 gap-6 mt-10 max-w-2xl opacity-80 px-8">
-        <FeatureGlass icon={<CircleDollarSign className="w-7 h-7 text-[#000065]/90" />} title="Final price shown" subtitle="Including fees" />
-        <FeatureGlass icon={<CheckCircle2 className="w-7 h-7 text-[#000065]/90" />} title="Verified tickets" subtitle="From trusted sellers" />
-        <FeatureGlass icon={<ShieldCheck className="w-7 h-7 text-[#000065]/90" />} title="100% guarantee" subtitle="Buyer protection" />
+      <div className="w-full grid  grid-cols-1 sm:grid-cols-3 gap-6 mt-10 max-w-2xl  opacity-80 px-8">
+        <FeatureGlass icon={<CircleDollarSign className="w-7 h-7 text-[#000065]/90" />} title="Final price shown" subtitle="including fees" />
+        <FeatureGlass icon={<CheckCircle2 className="w-7 h-7 text-[#000065]/90" />} title="Verified tickets" subtitle="from trusted sellers" />
+        <FeatureGlass icon={<ShieldCheck className="w-7 h-7 text-[#000065]/90" />} title="100% guarantee" subtitle="buyer protection" />
       </div>
 
       <p className="mt-10 text-sm relative text-black/70 leading-relaxed text-center max-w-2xl">
@@ -135,9 +135,9 @@ function LogoPill({ label, accent = false, important = false }: { label: string;
 
 function FeatureGlass({ icon, title, subtitle }: { icon: React.ReactNode; title: string; subtitle: string }) {
   return (
-    <div className="flex flex-col items-center justify-center py-4 px-3 rounded-2xl bg-white/30 backdrop-blur-md border border-white/40">
+    <div className="h-fit flex flex-shrink-0 flex-col items-center justify-center py-4 px-3 rounded-2xl bg-white/30 backdrop-blur-md border border-white/40">
       {icon}
-      <div className="mt-2 text-sm font-medium  text-black/70">{title}</div>
+      <div className="mt-2 text-xs text-black/60">{title}</div>
       <div className="mt-0.5 text-xs text-black/60">{subtitle}</div>
     </div>
   );
