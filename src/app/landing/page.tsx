@@ -9,19 +9,20 @@ import MouseScroll from '@/components/ScrollIndicator'
 import BlurText from '@/components/BlurText'
 import Footer from './footer'
 import Steps from './Steps'
+import { StickyScrollRevealDemo } from '@/components/stickyContent'
 
 const page = () => {
 
 
   return (
     <div className="min-h-[300vh] bg-black">
+      {/* <StickyScrollRevealDemo/> */}
       <HeroFullScreen />
 
       <FeatureSection />
-      {/* <Steps/> */}
+    
       <TestimonialsCarousel />
-      <Footer/>
-      
+      <Footer />
     </div>
     //bg-gradient-to-r from-[#000065] via-[#000099] to-[#0000cc]
   );

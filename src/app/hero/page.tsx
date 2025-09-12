@@ -158,7 +158,8 @@ export default function HeroFullScreen() {
               {/* Make this relative so absolute children are positioned against it */}
               <div className="relative flex-1">
                 <span className="absolute inset-y-0 left-4 flex items-center text-gray-400">
-                  <Search size={22} />
+                  {/* <Search size={22} /> */}
+                  <img src={"auto_awesome.svg"} sizes="22" className="opacity-80"/>
                 </span>
 
                 {/* give large right padding so input text doesn't go under buttons */}

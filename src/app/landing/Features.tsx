@@ -1,171 +1,162 @@
 "use client";
-
 import React from "react";
-import { motion, Variants } from "framer-motion";
-import { ShoppingCart, TrendingUp, Zap } from "lucide-react";
+import { Search, Tag, Store } from "lucide-react";
+import { motion } from "framer-motion";
 
-/* Color tokens — keep primary for brand accents */
-const PRIMARY = "#000065";
+/**
+ * FeatureSection
+ *
+ * Props:
+ *  - theme: "dark" | "light"  (default: "dark")
+ *
+ * Usage:
+ *  <FeatureSection />                // dark
+ *  <FeatureSection theme="light" />  // light
+ *
+ * Requires: tailwindcss, lucide-react, framer-motion
+ */
 
-/* Container staggering: children will animate with a small stagger */
-const containerVariants: Variants = {
-  start: {},
-  end: {
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.08,
+export default function FeatureSection({ theme = "light" }) {
+  const isLight = theme === "light";
+
+  const features = [
+    {
+      key: "search",
+      title: "Smarter Ticket Search",
+      desc: "Discover prices across verified marketplaces in seconds so you always get the best deal.",
+      Icon: Search,
     },
-  },
-};
-
-/* Child entrance: subtle pop-up using a spring-like config */
-const childVariants: Variants = {
-  start: { y: 18, opacity: 0, scale: 0.98 },
-  end: {
-    y: 0,
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.7,
-      ease: "easeOut",
-      // feel a little springy without overshoot
-      type: "spring",
-      stiffness: 160,
-      damping: 20,
+    {
+      key: "pricing",
+      title: "Transparent Pricing",
+      desc: "No hidden fees. No surprises. Just clear, upfront pricing every time.",
+      Icon: Tag,
     },
-  },
-};
+    {
+      key: "marketplaces",
+      title: "Verified Marketplaces",
+      desc: "Every ticket comes from a trusted source — fully vetted for safety and reliability.",
+      Icon: Store,
+    },
+  ];
 
-const ICON_VARIANTS: Variants = {
-  start: { scale: 0.9, rotate: -6, opacity: 0.9 },
-  end: { scale: 1, rotate: 0, opacity: 1, transition: { duration: 0.45 } },
-};
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  };
 
-const FEATURES = [
-  {
-    Icon: ShoppingCart,
-    title: "All Marketplaces",
-    description:
-      "Search across Amazon, eBay, Walmart, Target and 50+ other marketplaces simultaneously.",
-  },
-  {
-    Icon: TrendingUp,
-    title: "Best Prices",
-    description:
-      "Instantly compare prices and find the best deals. Save up to 40% on purchases.",
-  },
-  {
-    Icon: Zap,
-    title: "Lightning Fast",
-    description:
-      "Get results in under 2 seconds. Our advanced algorithms ensure speed & accuracy.",
-  },
-];
+  const card = {
+    hidden: { opacity: 0, y: 18, scale: 0.99 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.48, ease: "easeOut" },
+    },
+  };
 
-export default function FeatureSection(): JSX.Element {
+  // Theme-aware class helpers
+  const sectionClasses = isLight
+    ? "bg-white text-slate-900"
+    : "bg-black text-white";
+  const subtitleClasses = isLight ? "text-slate-600" : "text-gray-300";
+  const cardBg = isLight ? "bg-neutral-100/50" : "bg-neutral-800/30";
+  const cardBorderHover = isLight
+    ? "hover:border-amber-400/40"
+    : "hover:border-amber-500/40";
+  const cardShadow = isLight
+    ? "shadow-2xs shadow-[#000065]/60"
+    : "shadow-2xs shadow-amber-600/60";
+  const iconColor = isLight ? "text-white" : "text-black";
+  const iconContainerGradient = isLight
+    ? "from-[#000065] to-[#000065]/80"
+    : "from-amber-500 to-amber-400"; // same gradient works both
+  const titleGradient = isLight
+    ? "bg-gradient-to-tr from-amber-600 via-amber-500 to-amber-400 text-transparent bg-clip-text"
+    : "bg-gradient-to-tr from-amber-200 via-amber-400 to-amber-600 text-transparent bg-clip-text";
+
   return (
-    <section
-      aria-labelledby="features-heading"
-      id="features"
-      className="px-6 py-16 bg-white relative"
-    >
-      <div className="relative mx-auto max-w-6xl">
-        {/* Header */}
-        <motion.div
-          variants={containerVariants}
-          initial="start"
-          whileInView="end"
-          viewport={{ once: true, amount: 0.2 }}
-          className="mb-12 text-center"
-        >
-          <motion.h2
-            id="features-heading"
-            variants={childVariants}
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tighter"
-            style={{ color: PRIMARY }}
+    <section className={`${sectionClasses} py-28`}>
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#000065]">
+            Why Choose <span className={titleGradient}> TicketWhiz</span>
+          </h2>
+          <p
+            className={`mt-4 ${subtitleClasses} max-w-2xl mx-auto text-base md:text-lg`}
           >
-            Why Choose Our <span className="text-amber-500">Platform?</span>
-          </motion.h2>
+            At TicketWhiz we make it easy to discover great ticket options for
+            live events. Whether you're into sports, concerts, or theater, we
+            simplify the search — no extra steps.
+          </p>
+        </div>
 
-          <motion.p
-            variants={childVariants}
-            className="text-gray-600 max-w-2xl mx-auto mt-4 text-base sm:text-lg"
-          >
-            Experience the future of online shopping with our comprehensive
-            marketplace comparison tool — faster results, better prices, and
-            wider selection.
-          </motion.p>
-        </motion.div>
-
-        {/* Feature grid */}
         <motion.div
-          variants={containerVariants}
-          initial="start"
-          whileInView="end"
-          viewport={{ once: true, amount: 0.25 }}
-          className="grid gap-6 md:grid-cols-3"
-          role="list"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start"
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.18 }}
         >
-          {FEATURES.map((feature, index) => {
-            const Icon = feature.Icon;
-            return (
-              <motion.article
-                key={feature.title}
-                variants={childVariants}
-                role="listitem"
-                tabIndex={0}
-                className="group rounded-2xl border bg-white p-6 shadow-sm ring-1 ring-neutral-100/60 transition transform will-change-transform hover:-translate-y-1 hover:shadow-lg focus-within:-translate-y-1 focus-within:shadow-lg outline-none"
-                style={{ borderColor: "rgba(0,0,101,0.06)" }}
-                aria-label={feature.title}
+          {features.map((f) => (
+            <motion.article
+              key={f.key}
+              variants={card}
+              whileHover={{
+                translateY: -6,
+                // boxShadow: isLight
+                //   ? "0 12px 30px rgba(15,23,42,0.08)"
+                //   : "0 18px 40px rgba(0,0,0,0.45)",
+                scale: 1.01,
+              }}
+              className={`flex flex-col items-center text-center p-6 rounded-2xl ${cardBg} backdrop-blur-sm  transition-all duration-300 ${cardShadow}`}
+            >
+              <div
+                className={`p-4 rounded-xl mb-6 bg-gradient-to-br ${iconContainerGradient} shadow-md`}
+                style={{
+                  width: 72,
+                  height: 72,
+                  display: "grid",
+                  placeItems: "center",
+                }}
+                aria-hidden
               >
-                {/* Icon block */}
-                <motion.div
-                  variants={ICON_VARIANTS}
-                  className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-[#000065]/80 via-[#000065]/70 to-[#000065]/80 text-white shadow-md transition-shadow group-hover:shadow-xl"
-                >
-                  <Icon className="h-7 w-7" aria-hidden="true" />
-                </motion.div>
+                <f.Icon className={`w-6 h-6 ${iconColor}`} />
+              </div>
 
-                <h3 className="text-lg text-neutral-900 font-semibold mb-2 text-center">
-                  {feature.title}
-                </h3>
-
-                <p className="text-gray-600 text-sm leading-relaxed text-center">
-                  {feature.description}
-                </p>
-
-                {/* subtle CTA row — appears on hover/focus for micro interaction */}
-                <div className="mt-5 flex justify-center">
-                  <button
-                    className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium text-neutral-900 bg-gray-500/10 border border-gray-500/15 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 focus:opacity-100 focus-visible:ring-2 focus-visible:ring-gray-300 transition-all"
-                    onClick={() => {
-                      /* Example action - replace with real handler */
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
-                    aria-label={`Learn more about ${feature.title}`}
-                  >
-                    Learn more
-                    <span aria-hidden>→</span>
-                  </button>
-                </div>
-              </motion.article>
-            );
-          })}
+              <h3 className="text-xl font-semibold mb-2">{f.title}</h3>
+              <p
+                className={`${
+                  isLight ? "text-slate-600" : "text-gray-300"
+                } text-sm leading-relaxed`}
+              >
+                {f.desc}
+              </p>
+            </motion.article>
+          ))}
         </motion.div>
 
-        {/* Decorative background band (visual depth) */}
-        <div
-          className="absolute -z-10 bottom-0 w-full min-h-[20vh] bg-neutral-900"
-          aria-hidden
-        />
+        {/* Example CTA (optional) */}
+        {/* <div className="mt-12 text-center">
+          <motion.a
+            href="#"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={`${isLight ? 'bg-amber-600 text-white hover:bg-amber-500' : 'bg-amber-600 hover:bg-amber-500 text-black'} inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium shadow-lg`}
+          >
+            Explore Tickets
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </motion.a>
+        </div> */}
       </div>
-
-      {/* Respect prefers-reduced-motion: if user prefers reduced motion, remove framer animations */}
-      <style>{`
-        @media (prefers-reduced-motion: reduce) {
-          .motion-safe { animation: none !important; }
-        }
-      `}</style>
     </section>
   );
 }
