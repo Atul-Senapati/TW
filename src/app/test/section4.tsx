@@ -27,16 +27,14 @@ export default function TicketWhizLoader() {
             background: `
         repeating-linear-gradient(
           0deg,
-         rgba(0,0,0,0.03) 0px,
-rgba(0,0,0,0.03) 1px,
+         rgba(0,0,0,0.04) 0px,rgba(0,0,0,0.04) 1px,
 
           transparent 1px,
           transparent 46px
         ),
         repeating-linear-gradient(
           90deg,
-          rgba(0,0,0,0.03) 0px,
-rgba(0,0,0,0.03) 1px,
+          rgba(0,0,0,0.04) 0px,rgba(0,0,0,0.04) 1px,
 
           transparent 1px,
           transparent 46px
