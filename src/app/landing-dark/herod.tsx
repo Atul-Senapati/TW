@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { ArrowRight, Mic, Search } from "lucide-react";
+import { ArrowRight, Chromium, Mic, Search } from "lucide-react";
 import InfiniteHorizontalBrand from "../landing/brands";
 import InfiniteHorizontalBrandDark from "./brandsdark";
 
@@ -105,6 +105,10 @@ export default function HeroFullScreen() {
             <a href="#learn" className="hover:text-[#fff] transition">
               Learn
             </a>
+            <span className=" px-3 py-2 text-md font-normal shadow-md hover:shadow-lg flex items-center gap-2 bg-amber-800/10 border-[1px] border-amber-500/10 rounded-4xl">
+              Get Chrome Extension
+              {/* <Chromium className="w-3.5 h-3.5" /> */}
+            </span>
           </nav>
         </div>
       </header>

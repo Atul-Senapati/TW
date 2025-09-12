@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import { ArrowRight, Mic, Search } from "lucide-react";
+import { ArrowRight, Chromium, Mic, Search } from "lucide-react";
 import InfiniteHorizontalBrand from "../landing/brands";
 import MouseScroll from "@/components/ScrollIndicator";
 import ChevronScroll from "@/components/CheveronScroll";
@@ -100,6 +100,10 @@ export default function HeroFullScreen() {
             <a href="#learn" className="hover:text-[#000065] transition">
               Learn
             </a>
+            <span className=" px-3 py-2 text-md font-normal shadow-2xs hover:shadow-lg flex items-center gap-2 bg-amber-800/0 border-[1px] border-neutral-400/30 rounded-4xl">
+              {/* <Chromium className="w-5 h-5" /> */}
+              Get Chrome Extension
+            </span>
           </nav>
         </div>
       </header>
@@ -159,7 +163,11 @@ export default function HeroFullScreen() {
               <div className="relative flex-1">
                 <span className="absolute inset-y-0 left-4 flex items-center text-gray-400">
                   {/* <Search size={22} /> */}
-                  <img src={"auto_awesome.svg"} sizes="22" className="opacity-80"/>
+                  <img
+                    src={"auto_awesome.svg"}
+                    sizes="22"
+                    className="opacity-80"
+                  />
                 </span>
 
                 {/* give large right padding so input text doesn't go under buttons */}
