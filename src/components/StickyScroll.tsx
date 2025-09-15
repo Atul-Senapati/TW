@@ -19,14 +19,16 @@ export const StickyScroll = ({
   const ref = useRef<any>(null);
   const { scrollYProgress } = useScroll({
     // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
-    // target: ref
-    container: ref,
+    target: ref,
+    // container: ref,
     offset: ["start start", "end start"],
   });
   const cardLength = content.length;
+  const theme = "light"
+
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    const cardsBreakpoints = content.map((_, index) => index / cardLength);
+    const cardsBreakpoints = content.map((_, index) => index /3);
     const closestBreakpointIndex = cardsBreakpoints.reduce(
       (acc, breakpoint, index) => {
         const distance = Math.abs(latest - breakpoint);
@@ -34,17 +36,23 @@ export const StickyScroll = ({
           return index;
         }
         return acc;
-      },
+      }, 
       0
     );
     setActiveCard(closestBreakpointIndex);
   });
 
   const backgroundColors = [
-    "#0f172a", // slate-900
+    "#000000",
+    "#000000", // slate-90060
     "#000000", // black
     "#171717", // neutral-900
   ];
+//    const backgroundColors = [
+//      "#fff", // slate-90060
+//      "#fff", // black
+//      "#171717", // neutral-900
+//    ];
   const linearGradients = [
     "linear-gradient(to bottom right, #06b6d4, #10b981)", // cyan-500 to emerald-500
     "linear-gradient(to bottom right, #ec4899, #6366f1)", // pink-500 to indigo-500
@@ -62,15 +70,66 @@ export const StickyScroll = ({
   return (
     <motion.div
       animate={{
-        // backgroundColor: backgroundColors[activeCard % backgroundColors.length],
+        backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="relative flex h-[30rem] justify-center space-x-10 overflow-y-auto rounded-md p-10"
+      className="flex justify-center mx-auto max-w-6xl   space-x-10 rounded-md p-10  "
       ref={ref}
     >
-      <div className="div relative flex items-start px-4">
-        <div className="max-w-2xl">
+      <div
+        // style={{ background: backgroundGradient }}
+        className={cn(
+          "sticky top-20 hidden h-[100vh]   overflow-hidden rounded-md  lg:block",
+          contentClassName
+        )}
+      >
+        {/* {content[activeCard].content ?? null} */}
+
+        
+          <div className="relative flex items-center justify-center">
+            <img
+              src={"iphone14pro2.svg"}
+              className=" max-w-[300px] z-0 grayscale-100"
+            />
+            <img
+              src={"Asset 1.svg"}
+              className="absolute h-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+            />
+            <img
+              src={"Island.svg"}
+              className="absolute h-6 top-5 left-1/2 -translate-x-1/2  z-20"
+            />
+            <div
+              className="h-[598px] w-[290px] rounded-4xl bg-black absolute -z-10 text-black"
+              style={{ background: backgroundGradient }}
+            >
+              j
+            </div>
+            {/* <img src={"Asset7.png"} className="absolute -z-20 "/> */}
+            {/* <div className="absolute min-h-[300px] min-w-[320px] opacity-90 rounded-full blur-2xl bg-gradient-to-tr  from-amber-400 via-orange-300 to-yellow-400 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-20">
+            {" "}
+            rw frwfrew
+          </div> */}
+          </div>
+    
+      </div>
+      <div className="div relative flex items-start px-4 ">
+        <div className="max-w-xl ">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-20">
+            <div key={item.title + index} className="my-54 h-[60vh]  ">
+              {/* <div className="mb-6 mx-auto w-16 h-16 rounded-full bg-gradient-to-tr from-amber-400 via-orange-300 to-yellow-400 text-black flex items-center justify-center text-xl font-bold">
+                0{index + 1}
+              </div> */}
+              {/* <motion.div
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: activeCard === index ? 1 : 0.3,
+                }}
+                className="text-base  text-black py-1 px-4 bg-gradient-to-tr from-amber-200 via-amber-300 to-amber-400 w-fit opacity-40  rounded-4xl mb-2"
+              >
+                Up to Date
+              </motion.div> */}
               <motion.h2
                 initial={{
                   opacity: 0,
@@ -78,9 +137,12 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-slate-100"
+                className="text-5xl flex gap-6 font-bold text-slate-100"
               >
-                {item.title}
+                <div className="shrink-0 w-16 h-16 rounded-full bg-gradient-to-tr from-amber-200 via-amber-400 to-amber-600 text-black flex items-center justify-center text-4xl font-bold">
+                  {index + 1}
+                </div>{" "}
+                <span className="mt-2">{item.title}</span>
               </motion.h2>
               <motion.p
                 initial={{
@@ -89,23 +151,14 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg mt-10 max-w-sm text-slate-300"
+                className="text-base mt-3 ml-[88px]  text-slate-500"
               >
                 {item.description}
               </motion.p>
             </div>
           ))}
-          <div className="h-40" />
+          {/* <div className="h-20" /> */}
         </div>
-      </div>
-      <div
-        style={{ background: backgroundGradient }}
-        className={cn(
-          "sticky top-10 hidden h-60 w-80 overflow-hidden rounded-md bg-white lg:block",
-          contentClassName
-        )}
-      >
-        {content[activeCard].content ?? null}
       </div>
     </motion.div>
   );

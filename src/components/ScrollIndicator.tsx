@@ -122,3 +122,25 @@ export default function MouseScroll({
     </div>
   );
 }
+
+
+ {
+   /* <div className="absolute min-h-[300px] min-w-[380px] opacity-90 rounded-full blur-2xl bg-gradient-to-tr  from-amber-400 via-orange-300 to-yellow-400 top-1/2 left-1/2 -translate-x-1/3 -translate-y-1/2 z-0">
+          {" "}rw frwfrew
+        </div>
+        <img
+          src={"Starlight.svg"}
+          className="absolute h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+        />
+        <div
+          //   src={"Asset 1.svg"}
+          className="absolute min-h-[250px] w-[390px] bg-black top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+        >
+          ewf
+        </div>
+        <img
+          src={"Asset 1.svg"}
+          className="absolute h-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30"
+        />
+      </div> */
+ }

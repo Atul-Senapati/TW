@@ -26,7 +26,7 @@ const content = [
   {
     title: "Lock in the best deal",
     description:
-      "Pick your ticket and we’ll send you to the verified marketplace to complete your purchase quickly and securely.",
+      "Pick your ticket and we'll send you to the verified marketplace to complete your purchase quickly and securely.",
     content: (
       <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] text-white">
         Lock in the best deal
@@ -37,7 +37,21 @@ const content = [
 
 export function StickyScrollRevealDemo() {
   return (
-    <div className="px-10 py-4 ">
+    <div className="flex flex-col ">
+      <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+            Why Choose{" "}
+            <span className="bg-gradient-to-tr from-amber-200 via-amber-400 to-amber-600 text-transparent bg-clip-text">
+              {" "}
+              TicketWhiz
+            </span>
+          </h2>
+          <p className="mt-4 text-gray-300 max-w-2xl mx-auto text-base md:text-lg">
+            At TicketWhiz we make it easy to discover great ticket options for
+            live events. Whether you're into sports, concerts, or theater, we
+            simplify the search — no extra steps.
+          </p>
+        </div>
       <StickyScroll content={content} />
     </div>
   );

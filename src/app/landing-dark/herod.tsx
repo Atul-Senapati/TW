@@ -48,12 +48,7 @@ const logo = (
   </svg>
 );
 
-<div
-  class="fixed h-full top-0 left-0 right-0 z-0"
-  style="width:100%;height:100%;background-size:109px;background-repeat:repeat;background-image:url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png');opacity:0.06;border-radius:0"
->
-  <div class="absolute left-0 right-0 bottom-0 h-[300px]"></div>
-</div>;
+
 
 export default function HeroFullScreen() {
   return (

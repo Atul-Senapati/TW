@@ -128,7 +128,7 @@ export default function HeroFullScreen() {
           <motion.h1
             variants={childVariants}
             style={{ fontWeight: 900 }}
-            className="mt-6 py-1 text-4xl md:text-8xl leading-tighter font-semibold tracking-tighter  "
+            className="mt-6 py-1 text-4xl md:text-8xl leading-[6rem]  font-semibold tracking-tighter  "
           >
             <span className="bg-gradient-to-tr from-slate-600 via-[#000065] to-zinc-500 bg-clip-text text-transparent">
               One Smart Search.
