@@ -38,20 +38,21 @@ const content = [
 export function StickyScrollRevealDemo() {
   return (
     <div className="flex flex-col ">
-      <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-            Why Choose{" "}
-            <span className="bg-gradient-to-tr from-amber-200 via-amber-400 to-amber-600 text-transparent bg-clip-text">
-              {" "}
-              TicketWhiz
-            </span>
-          </h2>
-          <p className="mt-4 text-gray-300 max-w-2xl mx-auto text-base md:text-lg">
-            At TicketWhiz we make it easy to discover great ticket options for
-            live events. Whether you're into sports, concerts, or theater, we
-            simplify the search — no extra steps.
-          </p>
-        </div>
+      <div className="text-center mb-12 mt-24">
+        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+          Simple Smart and{" "}
+          <span className="bg-gradient-to-tr from-amber-200 via-amber-400 to-amber-600 text-transparent bg-clip-text">
+            {" "}
+            Stress-Free
+          </span>
+        </h2>
+        <p className="mt-4 text-gray-300 max-w-2xl mx-auto text-base md:text-lg">
+          No more endless searching or jumping between tabs. With TicketWhiz,
+          you can simply search, discover, and book your perfect seat all in
+          just a few clicks. Find your next event today and let us help you save
+          on every ticket.
+        </p>
+      </div>
       <StickyScroll content={content} />
     </div>
   );

@@ -11,8 +11,9 @@ const page = () => {
   return (
     <div className="min-h-[200vh]  bg-black ">
       <HeroFullScreen />
+      <StickyScrollRevealDemo />
       <FeatureSection />
-      <StickyScrollRevealDemo/>
+
       <TestimonialsCarousel />
     </div>
   );
