@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import iphone14 from "@/asset/iPhone14pro2.svg"
+import Image from "next/image";
 
 export const StickyScroll = ({
   content,
@@ -84,33 +86,28 @@ export const StickyScroll = ({
       >
         {/* {content[activeCard].content ?? null} */}
 
-        
-          <div className="relative flex items-center justify-center">
-            <img
-              src={"iphone14pro2.svg"}
-              className=" max-w-[300px] z-0 grayscale-100"
-            />
-            <img
-              src={"Asset 1.svg"}
-              className="absolute h-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
-            />
-            <img
-              src={"Island.svg"}
-              className="absolute h-6 top-5 left-1/2 -translate-x-1/2  z-20"
-            />
-            <div
-              className="h-[598px] w-[290px] rounded-4xl bg-black absolute -z-10 text-black"
-              style={{ background: backgroundGradient }}
-            >
-              j
-            </div>
-            {/* <img src={"Asset7.png"} className="absolute -z-20 "/> */}
-            {/* <div className="absolute min-h-[300px] min-w-[320px] opacity-90 rounded-full blur-2xl bg-gradient-to-tr  from-amber-400 via-orange-300 to-yellow-400 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-20">
+        <div className="relative flex items-center justify-center">
+          <Image src={iphone14} className=" w-[300px] z-0 grayscale-100"  alt="mobile" unoptimized/>
+          <img
+            src={"Asset 1.svg"}
+            className="absolute h-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+          />
+          <img
+            src={"Island.svg"}
+            className="absolute h-6 top-5 left-1/2 -translate-x-1/2  z-20"
+          />
+          <div
+            className="h-[598px] w-[290px] rounded-4xl bg-black absolute -z-10 text-black"
+            style={{ background: backgroundGradient }}
+          >
+            j
+          </div>
+          {/* <img src={"Asset7.png"} className="absolute -z-20 "/> */}
+          {/* <div className="absolute min-h-[300px] min-w-[320px] opacity-90 rounded-full blur-2xl bg-gradient-to-tr  from-amber-400 via-orange-300 to-yellow-400 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-20">
             {" "}
             rw frwfrew
           </div> */}
-          </div>
-    
+        </div>
       </div>
       <div className="div relative flex items-start px-4 ">
         <div className="max-w-xl ">
