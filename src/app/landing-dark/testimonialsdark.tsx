@@ -259,7 +259,7 @@ export default function TestimonialsCarousel() {
   };
 
   return (
-    <section className="absolute w-screen overflow-x-hidden pt-16 bg-black text-white z-30">
+    <section className="absolute w-screen overflow-x-hidden pt-26 bg-black text-white z-30">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
           Trusted by Thousands of <br />

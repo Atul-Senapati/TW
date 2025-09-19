@@ -5,6 +5,8 @@ import FeatureSectionTicketSearch from './feature';
 import Footer from './footer';
 import FeatureSection from './feature';
 import { StickyScrollRevealDemo } from '@/components/stickyContent';
+import Smallhero from './smallhero';
+import TicketWhizExtensionSection from './extenstion';
 
 
 const page = () => {
@@ -13,6 +15,8 @@ const page = () => {
       <HeroFullScreen />
       <StickyScrollRevealDemo />
       <FeatureSection />
+      <Smallhero/>
+     
 
       <TestimonialsCarousel />
     </div>

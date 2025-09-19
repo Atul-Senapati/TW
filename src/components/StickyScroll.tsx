@@ -60,6 +60,9 @@ export const StickyScroll = ({
     "linear-gradient(to bottom right, #ec4899, #6366f1)", // pink-500 to indigo-500
     "linear-gradient(to bottom right, #f97316, #eab308)", // orange-500 to yellow-500
   ];
+  let videos =[ "9_16.mp4","VIDEO2.mp4" ,"9_16.mp4"];
+
+  const [backvedos,setbackvedos] =useState(videos[0])
 
   const [backgroundGradient, setBackgroundGradient] = useState(
     linearGradients[0]
@@ -67,6 +70,7 @@ export const StickyScroll = ({
 
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
+    setbackvedos(videos[activeCard % videos.length]);
   }, [activeCard]);
 
   return (
@@ -87,15 +91,37 @@ export const StickyScroll = ({
         {/* {content[activeCard].content ?? null} */}
 
         <div className="relative flex items-center justify-center">
-          <Image src={iphone14} className=" w-[300px] z-0 grayscale-100"  alt="mobile" unoptimized/>
+          <Image
+            src={iphone14}
+            className=" w-[300px] z-0 grayscale-100 transform -scale-x-100"
+            alt="mobile"
+          />
           <img
             src={"Asset 1.svg"}
             className="absolute h-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
           />
           <img
-            src={"Island.svg"}
-            className="absolute h-6 top-5 left-1/2 -translate-x-1/2  z-20"
+            src={"Camera.svg"}
+            className="absolute h-4.5 brightness-25 top-5 left-1/2 -translate-x-1/2  z-20"
           />
+          {/* <img
+            src={"Camera.svg"}
+            className="absolute h-4.5 brightness-25 top-5 left-1/2 -translate-x-1/2  z-20"
+          /> */}
+          <img
+            src={"IMG.png"}
+            className="h-[598px] w-[290px] rounded-4xl bg-black absolute -z-10 text-black"
+            style={{ background: backgroundGradient }}
+          />
+          {/* <video
+            src={backvedos}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="h-[598px] w-[290px] rounded-4xl bg-black absolute -z-10 text-black"
+          /> */}
+
           <div
             className="h-[598px] w-[290px] rounded-4xl bg-black absolute -z-10 text-black"
             style={{ background: backgroundGradient }}
