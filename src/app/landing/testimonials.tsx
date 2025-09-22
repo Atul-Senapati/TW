@@ -259,7 +259,7 @@ export default function TestimonialsCarousel() {
   };
 
   return (
-    <section className=" absolute w-screen z-10 pt-26 bg-gradient-to-b from-white to-[#E9E9E9] dark:from-black dark:to-[#111111] dark:text-white">
+    <section className=" absolute w-screen overflow-hidden z-10 pt-26 bg-gradient-to-b from-white to-[#E9E9E9] dark:from-black dark:to-[#111111] dark:text-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold text-[#000065] dark:text-white leading-tight">
           Trusted by Thousands of <br />
