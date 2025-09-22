@@ -48,7 +48,7 @@ export default function FeatureSection() {
   };
 
   return (
-    <section className="bg-black text-white py-24">
+    <section id="features" className="bg-black text-white py-24 hidden dark:block">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">

@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, useMotionValue, animate } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Footer from "./footer";
 
 const TESTIMONIALS = [
   {
@@ -232,15 +233,17 @@ export default function TestimonialsCarousel() {
           large ? "scale-100" : "scale-95 opacity-50"
         }`}
       >
-        <div className={`bg-white rounded-2xl p-6 lg:p-10  h-full`}>
+        <div
+          className={`bg-white dark:bg-neutral-900 rounded-2xl p-6 lg:p-10  h-full`}
+        >
           <div className="flex items-center gap-4">
             <img
               src={t.avatar}
               alt={t.name}
-              className={`w-12 h-12 lg:w-16 lg:h-16 rounded-full object-cover`}
+              className={`w-12 h-12 lg:w-16 lg:h-16 rounded-full object-cover ring-2 ring-[#000065]/30 dark:ring-amber-200/90`}
             />
             <div className="text-left">
-              <div className="text-lg lg:text-2xl font-semibold text-[#000065]">
+              <div className="text-lg lg:text-2xl font-semibold text-[#000065]  dark:text-amber-400">
                 {t.name}
               </div>
               {/* <div className="text-sm text-gray-400">{t.title}</div> */}
@@ -256,9 +259,9 @@ export default function TestimonialsCarousel() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-[#E9E9E9]">
+    <section className=" absolute w-screen z-10 pt-26 bg-gradient-to-b from-white to-[#E9E9E9] dark:from-black dark:to-[#111111] dark:text-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#000065] leading-tight">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#000065] dark:text-white leading-tight">
           Trusted by Thousands of <br />
           <span className="bg-gradient-to-tr from-amber-400 via-amber-500 to-amber-600 text-transparent bg-clip-text">
             {" "}
@@ -270,7 +273,7 @@ export default function TestimonialsCarousel() {
         </p>
       </div>
 
-      <div className="relative mt-12">
+      <div className="relative mt-12 my-26">
         <div className="max-w-5xl mx-auto px-6" ref={containerRef}>
           {/* Motion track: we animate x to glide */}
           <motion.div
@@ -299,7 +302,7 @@ export default function TestimonialsCarousel() {
             <button
               onClick={handlePrev}
               aria-label="Previous"
-              className="w-12 h-12 rounded-full bg-[#000065]/80 text-white flex items-center justify-center shadow hover:scale-105 transform transition"
+              className="w-12 h-12 rounded-full bg-[#000065]/80 text-white dark:bg-gradient-to-bl from-amber-400/90 to-amber-300/90 dark:text-black flex items-center justify-center shadow hover:scale-105 transform transition"
             >
               <ChevronLeft className="size-8" />
             </button>
@@ -307,7 +310,7 @@ export default function TestimonialsCarousel() {
             <button
               onClick={handleNext}
               aria-label="Next"
-              className="w-12 h-12 rounded-full bg-[#000065]/80 text-white flex items-center justify-center shadow hover:scale-105 transform transition"
+              className="w-12 h-12 rounded-full bg-[#000065]/80 dark:bg-gradient-to-bl from-amber-400/90 to-amber-300/90 dark:text-black text-white flex items-center justify-center shadow hover:scale-105 transform transition"
             >
               <ChevronRight className="size-8" />
             </button>
@@ -329,6 +332,7 @@ export default function TestimonialsCarousel() {
           </div> */}
         </div>
       </div>
+      <Footer />
     </section>
   );
 }

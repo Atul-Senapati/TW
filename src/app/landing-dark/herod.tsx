@@ -5,6 +5,7 @@ import { motion, Variants } from "framer-motion";
 import { ArrowRight, Chromium, Mic, Search } from "lucide-react";
 import InfiniteHorizontalBrand from "../landing/brands";
 import InfiniteHorizontalBrandDark from "./brandsdark";
+import Link from "next/link";
 
 /* --- Variants --- */
 const containerVariants: Variants = {
@@ -52,7 +53,7 @@ const logo = (
 
 export default function HeroFullScreen() {
   return (
-    <div className="relative min-h-screen max-h-screen overflow-hidden text-gray-100 bg-black ">
+    <div className="relative min-h-screen max-h-screen overflow-hidden text-gray-100 bg-black hidden dark:block">
       {/* Animated gradient background */}
       <motion.div
         initial={{ scale: 1, opacity: 0 }}
@@ -91,9 +92,17 @@ export default function HeroFullScreen() {
             </div>
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm text-gray-300">
-            <a href="#features" className="hover:text-[#fff] transition">
+            <Link
+              href="#features"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById("features");
+                el?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className="hover:text-[#fff] transition"
+            >
               Features
-            </a>
+            </Link>
             <a href="#pricing" className="hover:text-[#fff] transition">
               About us
             </a>

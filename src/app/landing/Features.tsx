@@ -16,7 +16,7 @@ import { motion } from "framer-motion";
  * Requires: tailwindcss, lucide-react, framer-motion
  */
 
-export default function FeatureSection({ theme = "light" }) {
+export default function FeatureSection1({ theme = "light" }) {
   const isLight = theme === "light";
 
   const features = [
@@ -80,7 +80,7 @@ export default function FeatureSection({ theme = "light" }) {
     : "bg-gradient-to-tr from-amber-200 via-amber-400 to-amber-600 text-transparent bg-clip-text";
 
   return (
-    <section className={`${sectionClasses} py-28`}>
+    <section className={`${sectionClasses} py-28 dark:hidden`}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#000065]">

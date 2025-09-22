@@ -39,14 +39,14 @@ export function StickyScrollRevealDemo() {
   return (
     <div className="flex flex-col ">
       <div className="text-center mb-12 mt-24">
-        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#000065] dark:text-white">
           Simple Smart and{" "}
-          <span className="bg-gradient-to-tr from-amber-200 via-amber-400 to-amber-600 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-br from-amber-200 via-amber-400 to-amber-600 text-transparent bg-clip-text">
             {" "}
             Stress-Free
           </span>
         </h2>
-        <p className="mt-4 text-gray-300 max-w-2xl mx-auto text-base md:text-lg">
+        <p className="mt-4 dark:text-gray-300 max-w-2xl mx-auto text-base md:text-lg text-slate-600">
           No more endless searching or jumping between tabs. With TicketWhiz,
           you can simply search, discover, and book your perfect seat all in
           just a few clicks. Find your next event today and let us help you save

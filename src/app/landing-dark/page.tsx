@@ -11,7 +11,7 @@ import TicketWhizExtensionSection from './extenstion';
 
 const page = () => {
   return (
-    <div className="min-h-[200vh]  bg-black ">
+    <div className="min-h-[200vh] dark bg-black ">
       <HeroFullScreen />
       <StickyScrollRevealDemo />
       <FeatureSection />

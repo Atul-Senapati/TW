@@ -20,8 +20,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Create Next App",
-  
+  title: "TW",
 };
 
 export default function RootLayout({
@@ -30,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${poppins.variable} `}>
+    <html lang="en" >
+      <body className={`${poppins.variable} ` }>
         {/* <LenisProvider /> */}
         {children}
       </body>

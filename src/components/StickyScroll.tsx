@@ -75,9 +75,9 @@ export const StickyScroll = ({
 
   return (
     <motion.div
-      animate={{
-        backgroundColor: backgroundColors[activeCard % backgroundColors.length],
-      }}
+      // animate={{
+      //   backgroundColor: backgroundColors[activeCard % backgroundColors.length],
+      // }}
       className="flex justify-center mx-auto max-w-6xl   space-x-10 rounded-md p-10  "
       ref={ref}
     >
@@ -93,7 +93,7 @@ export const StickyScroll = ({
         <div className="relative flex items-center justify-center">
           <Image
             src={iphone14}
-            className=" w-[300px] z-0 grayscale-100 transform -scale-x-100"
+            className=" w-[300px] z-0 grayscale-100 transform -scale-x-100  "
             alt="mobile"
           />
           <img
@@ -110,7 +110,7 @@ export const StickyScroll = ({
           /> */}
           <img
             src={"IMG.png"}
-            className="h-[598px] w-[290px] rounded-4xl bg-black absolute -z-10 text-black"
+            className="h-[598px] w-[290px] rounded-4xl   dark:bg-black absolute -z-10 dark:text-black"
             style={{ background: backgroundGradient }}
           />
           {/* <video
@@ -126,7 +126,7 @@ export const StickyScroll = ({
             className="h-[598px] w-[290px] rounded-4xl bg-black absolute -z-10 text-black"
             style={{ background: backgroundGradient }}
           >
-            j
+            
           </div>
           {/* <img src={"Asset7.png"} className="absolute -z-20 "/> */}
           {/* <div className="absolute min-h-[300px] min-w-[320px] opacity-90 rounded-full blur-2xl bg-gradient-to-tr  from-amber-400 via-orange-300 to-yellow-400 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-20">
@@ -160,7 +160,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-5xl flex gap-6 font-bold text-slate-100"
+                className="text-5xl flex gap-6 font-bold dark:text-slate-100 text-neutral-800"
               >
                 <div className="shrink-0 w-16 h-16 rounded-full bg-gradient-to-tr from-amber-200 via-amber-400 to-amber-600 text-black flex items-center justify-center text-4xl font-bold">
                   {index + 1}

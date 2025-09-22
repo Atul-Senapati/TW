@@ -6,6 +6,7 @@ import { ArrowRight, Chromium, Mic, Search } from "lucide-react";
 import InfiniteHorizontalBrand from "../landing/brands";
 import MouseScroll from "@/components/ScrollIndicator";
 import ChevronScroll from "@/components/CheveronScroll";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 /* --- Variants --- */
 const containerVariants: Variants = {
@@ -38,9 +39,9 @@ const childVariants: Variants = {
 /* --- small logo --- */
 
 
-export default function HeroFullScreen() {
+export default function HeroFullScreen1() {
   return (
-    <div className="relative min-h-screen max-w-screen overflow-hidden text-gray-900 bg-white">
+    <div className="relative min-h-screen max-w-screen overflow-hidden text-gray-900 bg-white dark:hidden">
       {/* Animated gradient background */}
 
       <div className="absolute inset-0 z-0">

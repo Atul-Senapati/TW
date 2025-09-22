@@ -224,20 +224,38 @@ export default function TicketWhizExtensionSection() {
 
 export function TicketRow({ title, price, vendor }) {
   return (
-    <div className="flex items-center justify-between gap-4 bg-[#070707] rounded-md p-3 border border-[#111]">
+    <div
+      className="
+      flex items-center justify-between gap-4 rounded-md p-3 border transition-colors duration-300
+      bg-[#f9f9f9] border-[#e5e7eb] text-[#111]    /* Light mode */
+      dark:bg-[#070707] dark:border-[#111] dark:text-[#e6e6e6]  /* Dark mode */
+    "
+    >
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-md bg-gradient-to-b from-[#222] to-[#0b0b0b] flex items-center justify-center text-sm font-semibold text-[#ffd54a]">
-          <img src={"Asset7.png"} className="w-3 opacity-70"/>
+        <div
+          className="
+          w-10 h-10 rounded-md flex items-center justify-center text-sm font-semibold
+          bg-gradient-to-b from-[#e5e5e5] to-[#cfcfcf] text-[#d97706] /* Light mode */
+          dark:from-[#222] dark:to-[#0b0b0b] dark:text-[#ffd54a]     /* Dark mode */
+        "
+        >
+          <img src={"Asset 8.png"} className="w-3 opacity-70 dark:hidden" />
+          <img src={"Asset7.png"} className="w-3 opacity-70 hidden dark:block" />
         </div>
         <div>
           <div className="text-sm font-semibold">{title}</div>
-          <div className="text-xs text-[#94a3b8]">{vendor}</div>
+          <div className="text-xs text-[#6b7280] dark:text-[#94a3b8]">
+            {vendor}
+          </div>
         </div>
       </div>
-      <div className="text-sm font-semibold text-[#e6e6e6]">{price}</div>
+      <div className="text-sm font-semibold text-[#111] dark:text-[#e6e6e6]">
+        {price}
+      </div>
     </div>
   );
 }
+
 
 function ChromeBadge({ className }) {
   return (
